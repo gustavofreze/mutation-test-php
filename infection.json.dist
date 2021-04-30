@@ -1,0 +1,25 @@
+{
+  "source": {
+    "directories": [
+      "src"
+    ],
+    "excludes": [
+      "vendor"
+    ]
+  },
+  "phpUnit": {
+    "configDir": "."
+  },
+  "logs": {
+    "text": "infection.log"
+  },
+  "mutators": {
+    "@default": true,
+    "RoundingFamily": false,
+    "DecrementInteger": false,
+    "IncrementInteger": false
+  },
+  "timeout": 10,
+  "testFramework": "phpunit",
+  "tmpDir": "/cache/"
+}
