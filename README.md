@@ -1,4 +1,4 @@
-## Mutation Test
+## Mutation Test PHP
 
 [![Minimum PHP Version](https://img.shields.io/badge/php-%5E8.0.5-blue)](https://php.net/)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-green)](https://github.com/GustavoSantosBr/mutation-test-php)
@@ -8,8 +8,7 @@
 * [Instalação](#installation)
 * [Testes](#tests)
     - [Infection](#infection)
-    - [Mutation Testing](#mutation_testing)
-    - [Unit Testing](#unit_testing)
+    - [Executando os testes](#execute)
 
 <div id='introduction'></div> 
 
@@ -25,31 +24,16 @@ considerado como coberto pelos testes.
 
 ## Instalação
 
-- Abra seu terminal, navegue até o diretório de sua preferência, e em seguida execute:
+- Abra seu terminal, navegue até o diretório de sua preferência, e execute:
   ```bash
   > git clone https://github.com/GustavoSantosBr/mutation-test.git
   ```
 
-- Navegue até a pasta do projeto utilizando:
+- Em seguida, execute o comando abaixo para configurar o projeto, e instalar as depêndencias:
   ```bash
-  > cd mutation-test
+  > make configure
   ```
-
-- Em seguida, execute o comando abaixo para dar início ao contêiner do projeto:
-  ```bash
-  > docker-compose up -d
-  ```
-
-- Após o término da criação do contêiner, entre no bash executando:
-  ```bash
-  > docker exec -it mutation bash
-  ```
-
-- Instale as depêndencias do projeto com o seguinte comando:
-  ```bash
-  > composer install
-  ```
-
+  
 <div id='tests'></div>
 
 ## Testes
@@ -62,22 +46,12 @@ Neste exemplo utilizarei o framework Infection. Infection é um framework de tes
 (Abstract Syntax Tree). Ele funciona como uma ferramenta CLI e pode ser executado a partir da raiz do projeto. Mais
 detalhes sobre o [Infection](https://infection.github.io/guide/index.html).
 
-<div id='mutation_testing'></div>
+<div id='execute'></div>
 
-### Mutation Testing
+### Executando os testes
 
-Para executar os testes de mutação, basta entrar no bash do contêiner e executar:
-
-  ```bash
-  > ./vendor/bin/infection
-  ```
-
-<div id='unit_testing'></div>
-
-### Unit Testing
-
-Para executar os testes unitários, basta entrar no bash do contêiner e executar:
-
-  ```bash
-  > ./vendor/bin/phpunit --coverage-html tests/coverage/
-  ```
+```bash
+> make test        # Executa todos os tipos de testes e gera o coverage
+> test-unit        # Executa apenas os teste unitários
+> test-infection   # Executa apenas os testes de mutação
+```
