@@ -26,7 +26,7 @@ considerado como coberto pelos testes.
 
 - Abra seu terminal, navegue até o diretório de sua preferência, e execute:
   ```bash
-  > git clone https://github.com/GustavoSantosBr/mutation-test.git
+  > git clone https://github.com/GustavoSantosBr/mutation-test-php.git
   ```
 
 - Em seguida, execute o comando abaixo para configurar o projeto, e instalar as depêndencias:
