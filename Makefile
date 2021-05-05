@@ -5,10 +5,10 @@ configure:
 	- ${DOCKER_RUN} composer update
 	- ${DOCKER_RUN} composer dump-autoload
 
-test: test-unit test-infection
+test: test-unit test-mutation
 
 test-unit:
 	- ${DOCKER_RUN} ./vendor/bin/phpunit --coverage-html tests/coverage/
 
-test-infection:
+test-mutation:
 	- ${DOCKER_RUN} ./vendor/bin/infection

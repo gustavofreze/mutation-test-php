@@ -51,7 +51,7 @@ detalhes sobre o [Infection](https://infection.github.io/guide/index.html).
 ### Executando os testes
 
 ```bash
-> make test        # Executa todos os tipos de testes e gera o coverage
-> test-unit        # Executa apenas os teste unitários
-> test-infection   # Executa apenas os testes de mutação
+> make test            # Executa todos os tipos de testes e gera o coverage
+> make test-unit       # Executa apenas os testes unitários
+> make test-mutation   # Executa apenas os testes de mutação
 ```
