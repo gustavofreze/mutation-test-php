@@ -1,18 +1,20 @@
 ## Mutation Test PHP
 
-[![Minimum PHP Version](https://img.shields.io/badge/php-%5E8.0.5-blue)](https://php.net/)
-[![Coverage](https://img.shields.io/badge/coverage-100%25-green)](https://github.com/GustavoSantosBr/mutation-test-php)
-[![Mutation](https://img.shields.io/badge/mutation-100%25-green)](https://github.com/GustavoSantosBr/mutation-test-php)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/gustavofreze)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%5E8.0.6-blue)](https://php.net/)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-green)](https://github.com/gustavofreze/mutation-test-php)
+[![Mutation](https://img.shields.io/badge/mutation-100%25-green)](https://github.com/gustavofreze/mutation-test-php)
 
-* [Introdução](#introduction)
+* [Overview](#overview)
 * [Instalação](#installation)
 * [Testes](#tests)
     - [Infection](#infection)
     - [Executando os testes](#execute)
+    - [Úteis](#util)
 
-<div id='introduction'></div> 
+<div id='overview'></div> 
 
-## Introdução
+## Overview
 
 O teste de mutação é um sistema usado para projetar novos testes de software e avaliar a qualidade dos testes de
 software existentes. O teste de mutação envolve a modificação de um programa em pequenas maneiras. O conceito de teste
@@ -26,14 +28,14 @@ considerado como coberto pelos testes.
 
 - Abra seu terminal, navegue até o diretório de sua preferência, e execute:
   ```bash
-  > git clone https://github.com/GustavoSantosBr/mutation-test-php.git
+  > git clone https://github.com/gustavofreze/mutation-test-php.git
   ```
 
 - Em seguida, execute o comando abaixo para configurar o projeto, e instalar as depêndencias:
   ```bash
   > make configure
   ```
-  
+
 <div id='tests'></div>
 
 ## Testes
@@ -51,7 +53,19 @@ detalhes sobre o [Infection](https://infection.github.io/guide/index.html).
 ### Executando os testes
 
 ```bash
-> make test            # Executa todos os tipos de testes e gera o coverage
-> make test-unit       # Executa apenas os testes unitários
-> make test-mutation   # Executa apenas os testes de mutação
+> make test               # Executa todos os tipos de testes e gera o coverage
+> make test-unit          # Executa apenas os testes unitários
+> make test-unit-coverage # Executa apenas os testes unitários e gera o coverage
+> make test-mutation      # Executa apenas os testes de mutação
+```
+
+<div id='util'></div>
+
+### Úteis
+
+Comandos úteis após a execução dos testes.
+
+```bash
+> make show-coverage # Abre no Google Chrome o coverage
+> make clean         # Limpa os relatórios e cache gerados pelos testes
 ```

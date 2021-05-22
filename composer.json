@@ -1,5 +1,21 @@
 {
-    "name": "gustavosantos/mutation-test-php",
+    "name": "gustavofreze/mutation-test-php",
+    "description": "Mutation test in PHP",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "keywords": [
+    ],
+    "authors": [
+        {
+            "name": "Gustavo Freze de Araujo Santos",
+            "email": "gustavo.freze@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
     "autoload": {
         "psr-4": {
             "Mutation\\": "src/"
@@ -11,9 +27,15 @@
         }
     },
     "require": {
+        "php": "^8.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "infection/infection": "^0.21.0"
+    },
+    "scripts": {
+        "test-unit": "phpunit",
+        "test-unit-coverage": "phpunit --log-junit=report/coverage/junit.xml --coverage-xml=report/coverage/coverage-xml --coverage-html ./report/coverage-html",
+        "test-mutation": "infection --only-covered"
     }
 }

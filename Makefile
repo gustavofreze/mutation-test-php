@@ -1,14 +1,22 @@
-IMAGE=gustavofreze/php-8.0.5
-DOCKER_RUN:=docker run --rm -it -v ${PWD}:/usr/app -w /usr/app ${IMAGE}
+DOCKER_RUN := docker run --rm -it -v ${PWD}:/app -w /app gustavofreze/php-8.0.6
 
 configure:
 	- ${DOCKER_RUN} composer update
 	- ${DOCKER_RUN} composer dump-autoload
 
-test: test-unit test-mutation
+test: test-unit-coverage test-mutation
 
 test-unit:
-	- ${DOCKER_RUN} ./vendor/bin/phpunit --coverage-html tests/coverage/
+	- ${DOCKER_RUN} composer test-unit
+
+test-unit-coverage:
+	- ${DOCKER_RUN} composer test-unit-coverage
 
 test-mutation:
-	- ${DOCKER_RUN} ./vendor/bin/infection
+	- ${DOCKER_RUN} composer test-mutation
+
+show-coverage:
+	- google-chrome report/coverage-html/index.html
+
+clean:
+	- ${DOCKER_RUN} rm -rf report

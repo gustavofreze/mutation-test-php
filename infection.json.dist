@@ -1,25 +1,27 @@
 {
-  "source": {
-    "directories": [
-      "src"
-    ],
-    "excludes": [
-      "vendor"
-    ]
-  },
-  "phpUnit": {
-    "configDir": "."
-  },
-  "logs": {
-    "text": "infection.log"
-  },
-  "mutators": {
-    "@default": true,
-    "RoundingFamily": false,
-    "DecrementInteger": false,
-    "IncrementInteger": false
-  },
-  "timeout": 10,
-  "testFramework": "phpunit",
-  "tmpDir": "/cache/"
+    "timeout": 10,
+    "testFramework": "phpunit",
+    "tmpDir": "report/",
+    "source": {
+        "directories": [
+            "src"
+        ],
+        "excludes": [
+            "vendor"
+        ]
+    },
+    "logs": {
+        "text": "report/logs/infection-text.log",
+        "summary": "report/logs/infection-summary.log"
+    },
+    "mutators": {
+        "@default": true,
+        "RoundingFamily": false,
+        "DecrementInteger": false,
+        "IncrementInteger": false
+    },
+    "phpUnit": {
+        "configDir": ".",
+        "customPath": "./vendor/bin/phpunit"
+    }
 }
