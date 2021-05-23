@@ -13,47 +13,38 @@ final class Salary
     private const MIDDLE_PERIOD = 15;
 
     /**
-     * @var Fee
-     */
-    private Fee $fee;
-
-    /**
-     * @var float
-     */
-    private float $baseSalary;
-
-    /**
-     * @var int
-     */
-    private int $periodWorked;
-
-    /**
      * @var float
      */
     private float $salaryWithIncrease;
 
-    public function __construct(Fee $fee, float $baseSalary, int $periodWorked)
+    public function __construct(private Fee $fee, private float $baseSalary, private int $periodWorked)
     {
-        $this->fee = $fee;
-        $this->baseSalary = $baseSalary;
-        $this->periodWorked = $periodWorked;
         $this->salaryWithIncrease = $this->baseSalary;
     }
 
     public function applyIncreaseByPeriod(): void
     {
         if ($this->periodWorked >= self::LONG_PERIOD) {
-            $this->salaryWithIncrease += $this->calculateIncreaseAmount($this->baseSalary, $this->fee::MAXIMUM_INCREASE);
+            $this->salaryWithIncrease += $this->calculateIncreaseAmount(
+                $this->baseSalary,
+                $this->fee::MAXIMUM_INCREASE
+            );
             return;
         }
 
         if ($this->periodWorked >= self::MIDDLE_PERIOD) {
-            $this->salaryWithIncrease += $this->calculateIncreaseAmount($this->baseSalary, $this->fee::MEDIUM_INCREASE);
+            $this->salaryWithIncrease += $this->calculateIncreaseAmount(
+                $this->baseSalary,
+                $this->fee::MEDIUM_INCREASE
+            );
             return;
         }
 
         if ($this->periodWorked >= self::SHORT_PERIOD) {
-            $this->salaryWithIncrease += $this->calculateIncreaseAmount($this->baseSalary, $this->fee::MINIMUM_INCREASE);
+            $this->salaryWithIncrease += $this->calculateIncreaseAmount(
+                $this->baseSalary,
+                $this->fee::MINIMUM_INCREASE
+            );
         }
     }
 

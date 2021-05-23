@@ -1,5 +1,7 @@
 DOCKER_RUN := docker run --rm -it -v ${PWD}:/app -w /app gustavofreze/php-8.0.6
 
+.PHONY: clean
+
 configure:
 	- ${DOCKER_RUN} composer update
 	- ${DOCKER_RUN} composer dump-autoload

@@ -21,7 +21,9 @@ class SalaryTest extends TestCase
     {
         $salary = new Salary(new Fee(), self::BASE_SALARY, 25);
         $salary->applyIncreaseByPeriod();
-        self::assertEquals(5600, $salary->getSalaryWithIncrease());
+        $actual = $salary->getSalaryWithIncrease();
+
+        self::assertEquals(5600, $actual);
     }
 
     /**
@@ -33,7 +35,9 @@ class SalaryTest extends TestCase
     {
         $salary = new Salary(new Fee(), self::BASE_SALARY, 15);
         $salary->applyIncreaseByPeriod();
-        self::assertEquals(5300, $salary->getSalaryWithIncrease());
+        $actual = $salary->getSalaryWithIncrease();
+
+        self::assertEquals(5300, $actual);
     }
 
     /**
@@ -45,7 +49,9 @@ class SalaryTest extends TestCase
     {
         $salary = new Salary(new Fee(), self::BASE_SALARY, 5);
         $salary->applyIncreaseByPeriod();
-        self::assertEquals(5150, $salary->getSalaryWithIncrease());
+        $actual = $salary->getSalaryWithIncrease();
+
+        self::assertEquals(5150, $actual);
     }
 
     /**
@@ -57,6 +63,8 @@ class SalaryTest extends TestCase
     {
         $salary = new Salary(new Fee(), self::BASE_SALARY, 3);
         $salary->applyIncreaseByPeriod();
-        self::assertEquals(self::BASE_SALARY, $salary->getSalaryWithIncrease());
+        $actual = $salary->getSalaryWithIncrease();
+
+        self::assertEquals(self::BASE_SALARY, $actual);
     }
 }
