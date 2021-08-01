@@ -1,7 +1,7 @@
 ## Mutation Test PHP
 
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/gustavofreze)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%5E8.0.6-blue)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%5E8.0.6-blue)](https://php.net)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-green)](https://github.com/gustavofreze/mutation-test-php)
 [![Mutation](https://img.shields.io/badge/mutation-100%25-green)](https://github.com/gustavofreze/mutation-test-php)
 
@@ -52,20 +52,42 @@ detalhes sobre o [Infection](https://infection.github.io/guide/index.html).
 
 ### Executando os testes
 
+Executa todos os tipos de testes e gera o coverage.
+
 ```bash
-> make test               # Executa todos os tipos de testes e gera o coverage
-> make test-unit          # Executa apenas os testes unitários
-> make test-unit-coverage # Executa apenas os testes unitários e gera o coverage
-> make test-mutation      # Executa apenas os testes de mutação
+> make test            
+```
+
+Executa apenas os testes unitários.
+
+```bash
+> make test-unit
+```
+
+Executa apenas os testes unitários e gera o coverage.
+
+```bash
+> make test-unit-coverage
+```
+
+Executa apenas os testes de mutação.
+
+```bash
+> make test-mutation      
 ```
 
 <div id='util'></div>
 
 ### Úteis
 
-Comandos úteis após a execução dos testes.
+Abre no navegador padrão o coverage.
 
 ```bash
-> make show-coverage # Abre no Google Chrome o coverage
-> make clean         # Limpa os relatórios e cache gerados pelos testes
+> make show-coverage
+```
+
+Limpa os relatórios e cache gerados pelos testes.
+
+```bash
+> make clean
 ```
